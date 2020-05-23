@@ -6,13 +6,13 @@
 Summary:	A class for types with a default value
 Summary(pl.UTF-8):	Klasa dla typów z wartością domyślną
 Name:		ghc-%{pkgname}
-Version:	0.0.1
+Version:	0.1.2.0
 Release:	1
 License:	BSD
 Group:		Development/Languages
 #Source0Download: http://hackage.haskell.org/package/data-default-class
 Source0:	http://hackage.haskell.org/package/%{pkgname}-%{version}/%{pkgname}-%{version}.tar.gz
-# Source0-md5:	abfd756bcc6d92e47436992c80ccdb80
+# Source0-md5:	44ba331fe94a7689e84dbbf4411e229e
 URL:		http://hackage.haskell.org/package/data-default-class
 BuildRequires:	ghc >= 6.12.3
 BuildRequires:	ghc-base >= 2
@@ -109,16 +109,18 @@ rm -rf $RPM_BUILD_ROOT
 %doc LICENSE 
 %{_libdir}/%{ghcdir}/package.conf.d/%{pkgname}.conf
 %dir %{_libdir}/%{ghcdir}/%{pkgname}-%{version}
-%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/HSdata-default-class-%{version}.o
-%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/libHSdata-default-class-%{version}.a
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/libHSdata-default-class-%{version}-*.so
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/libHSdata-default-class-%{version}-*.a
+%exclude %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/libHSdata-default-class-%{version}-*_p.a
 %dir %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Data
 %dir %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Data/Default
 %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Data/Default/Class.hi
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Data/Default/Class.dyn_hi
 
 %if %{with prof}
 %files prof
 %defattr(644,root,root,755)
-%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/libHSdata-default-class-%{version}_p.a
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/libHSdata-default-class-%{version}-*_p.a
 %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Data/Default/Class.p_hi
 %endif
 
