@@ -7,7 +7,7 @@ Summary:	A class for types with a default value
 Summary(pl.UTF-8):	Klasa dla typów z wartością domyślną
 Name:		ghc-%{pkgname}
 Version:	0.1.2.0
-Release:	1
+Release:	2
 License:	BSD
 Group:		Development/Languages
 #Source0Download: http://hackage.haskell.org/package/data-default-class
